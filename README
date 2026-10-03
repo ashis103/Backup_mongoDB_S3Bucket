@@ -1,7 +1,6 @@
 # Instructions to get backup
-
-# STEPS:
-
+# STEPS: take a instance EC2 which setup mongoDB and config for backup . login 
+login EC2# git clone (https://github.com/bongodev/mongo-backup-chron-job.git)
 ## Fork this repository in your GitHub
 
 ### Install and Create mongoDB with Dummy data:
@@ -14,6 +13,10 @@
     ./setup_mongo.sh
 
 ### Install AWS CLI
+
+Go EC2 Cli mode for Aws config 
+#AWS config 
+use access kwy and secret key .
 
     sudo apt install unzip
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -42,8 +45,14 @@
 -   Attach the IAM role to your EC2 instance.
 
 
-### Check bucket access:
+### Check bucket access: 
+bucket need a IM user s3_backup and need attached policy S3 full access .
+then need to IM propertise security credential use case for command line interafce .
+download security key .
 
+
+
+** Make a bucket 
     aws s3 ls s3://your-bucket-name
 
 ### Verify the Backup Process if backup-generator.sh is running smoothly and creating s3 backup
